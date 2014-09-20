@@ -127,22 +127,22 @@ module MPlayer
     # :append loads the file and appends it to the current playlist
     # :no_append will stop playback and play new loaded file
     def load_file(file,append = :no_append)
-      unless File.exists?(file) || !!(file =~ URI::regexp)
+      unless File.exists?(file) || URI::regexp.match(file)
         raise ArgumentError,"Invalid File"
       end
       switch = (append == :append ? 1 : 0)
-      command "loadfile #{file} #{switch}"
+      command "loadfile \"#{file}\" #{switch}"
     end
 
     # Loads the playlist into MPlayer
     # :append loads the playlist and appends it to the current playlist
     # :no_append will stop playback and play new loaded playlist
     def load_list(file,append = :no_append)
-      unless File.exists?(file) || !!(file =~ URI::regexp)
+      unless File.exists?(file) || URI::regexp.match(file)
         raise ArgumentError,"Invalid File"
       end
       switch = (append == :append ? 1 : 0)
-      command "loadlist #{file} #{switch}"
+      command "loadlist \"#{file}\" #{switch}"
     end
 
     # When more than one source is available it selects the next/previous one.

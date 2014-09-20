@@ -22,7 +22,7 @@ class Riot::Situation
 
   # mocks Open4
   def mock_player
-    mock(Open4).popen4('/usr/bin/mplayer -slave -quiet "test/test.mp3"') { [true,true,true,true] }
+    mock(Open4).popen4('mplayer -slave -quiet "test/test.mp3"') { [true,true,true,true] }
     stub(true).gets { "playback" }
     MPlayer::Slave.new('test/test.mp3')
   end

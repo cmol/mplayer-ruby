@@ -226,17 +226,17 @@ context "MPlayer::SlaveCommands" do
     ].each do |kind, location|
       context kind do
         context "append" do
-          setup { mock_command @player, "loadfile #{location} 1" }
+          setup { mock_command @player, "loadfile \"#{location}\" 1" }
           asserts("load_file #{location}, :append") { @player.load_file location, :append }
         end
 
         context "no append" do
-          setup { mock_command @player, "loadfile #{location} 0" }
+          setup { mock_command @player, "loadfile \"#{location}\" 0" }
           asserts("load_file #{location}") { @player.load_file location }
         end
 
         context "explicit no append" do
-          setup { mock_command @player, "loadfile #{location} 0" }
+          setup { mock_command @player, "loadfile \"#{location}\" 0" }
           asserts("load_file #{location}, :no_append") { @player.load_file location, :no_append }
         end
       end
@@ -252,18 +252,18 @@ context "MPlayer::SlaveCommands" do
     ].each do |kind, location|
       context kind do
         context "append" do
-          setup { mock_command @player, "loadlist #{location} 1" }
+          setup { mock_command @player, "loadlist \"#{location}\" 1" }
           asserts("load_list #{location}, :append") { @player.load_list location, :append }
         end
 
         context "no append" do
-          setup { mock_command @player, "loadlist #{location} 0" }
+          setup { mock_command @player, "loadlist \"#{location}\" 0" }
           asserts("load_list #{location}") { @player.load_list location }
           #asserts("load_list #{location}, :no_append") { @player.load_list location, :no_append }
         end
 
         context "explicit no append" do
-          setup { mock_command @player, "loadlist #{location} 0" }
+          setup { mock_command @player, "loadlist \"#{location}\" 0" }
           asserts("load_list #{location}, :no_append") { @player.load_list location, :no_append }
         end
       end

@@ -1,10 +1,10 @@
-# mplayer-ruby [![](http://stillmaintained.com/achiu/mplayer-ruby.png)](http://stillmaintained.com/achiu/mplayer-ruby)
+# mplayer-ruby [![Build Status](https://travis-ci.org/petems/mplayer-ruby.svg?branch=master)](https://travis-ci.org/petems/mplayer-ruby)
 
 A Ruby Wrapper for MPlayer. Controls MPlayer via the Slave Protocol.
 
 See [RDOC](http://mplayer-ruby.rubyforge.org/mplayer-ruby/index.html) for additional information.
 
-See [examples/](http://github.com/achiu/mplayer-ruby/tree/master/examples/) for usage.
+See [examples/](http://github.com/petems/mplayer-ruby/tree/master/examples/) for usage.
 
 
 ## Installation
@@ -24,10 +24,7 @@ See [examples/](http://github.com/achiu/mplayer-ruby/tree/master/examples/) for 
     
 ### MPlayer-ruby
 
-It's hosted on gemcutter.org
-
-   $ sudo gem install mplayer-ruby
-
+   $ gem install mplayer-ruby
 
 
 ## TODO
